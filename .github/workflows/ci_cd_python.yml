@@ -105,11 +105,8 @@ jobs:
           print('Hello from Python! Version:', sys.version)
           "
 
-      - name: Install request
-        run: pip install request
-        
-      - name: Install Json
-        run: pip install json
+      - name: Install requests
+        run: pip install requests
         
       - name: Run Python code inline
         run: |
