@@ -104,6 +104,13 @@ jobs:
           import sys
           print('Hello from Python! Version:', sys.version)
           "
+
+      - name: Install request
+        run: pip install request
+        
+      - name: Install Json
+        run: pip install json
+        
       - name: Run Python code inline
         run: |
           python -c "
