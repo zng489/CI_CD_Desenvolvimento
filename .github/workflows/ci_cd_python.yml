@@ -102,7 +102,7 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          python -c "
+          python -c 
           import requests
           import json
           
@@ -122,4 +122,3 @@ jobs:
               print('Mensagem enviada com sucesso!')
           else:
               print(f'Falha ao enviar mensagem. Status Code: {response.status_code}')
-          "
