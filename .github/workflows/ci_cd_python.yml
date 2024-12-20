@@ -122,4 +122,3 @@ if response.status_code == 204:
 else:
     print(f'Falha ao enviar mensagem. Status Code: {response.status_code}')
 "
-
