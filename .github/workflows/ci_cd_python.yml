@@ -98,27 +98,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Send Discord Webhook
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: Run Python code inline
         run: |
-          python -c 
-          import requests
-          import json
-          
-          # URL do webhook do Discord
-          webhook_url = '${{ secrets.DISCORD_WEBHOOK_URL }}'
-          
-          # Mensagem que você quer enviar
-          message = {
-              'content': 'Sua mensagem aqui!'
-          }
-          
-          # Enviando a requisição POST para o webhook
-          response = requests.post(webhook_url, data=json.dumps(message), headers={'Content-Type': 'application/json'})
-          
-          # Verificando se a requisição foi bem-sucedida
-          if response.status_code == 204:
-              print('Mensagem enviada com sucesso!')
-          else:
-              print(f'Falha ao enviar mensagem. Status Code: {response.status_code}')
+          python -c "
+          import sys
+          print('Hello from Python! Version:', sys.version)
+          "
