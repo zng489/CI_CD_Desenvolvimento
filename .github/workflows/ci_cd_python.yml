@@ -115,8 +115,18 @@ jobs:
           import json
           import requests
           
-          # URL do webhook do Discord
+          # URL of the Discord webhook
           webhook_url = 'https://discord.com/api/webhooks/1285654063169540156/NnZO27R4tdxsJp-j9fDa8cOjcGIg1l7sGzm_sZs95E4KY7D360CR8UOVo6Omyyxk4zOv'
-          print('webhook_url', sys.version)
+  
+          # Data to send in the webhook
+          data = {
+            'content': 'Hello from GitHub Actions! Version: ' + sys.version
+          }
+  
+          # Send a POST request to the webhook
+          response = requests.post(webhook_url, json=data)
+  
+          # Print response from the server (optional)
+          print('Response status code:', response.status_code)
+          print('Response content:', response.text)
           "
-
